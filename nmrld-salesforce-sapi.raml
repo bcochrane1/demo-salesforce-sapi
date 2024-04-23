@@ -1,0 +1,62 @@
+#%RAML 1.0
+title: nmrld-salesforce-sapi
+description: New Mexico Regulation & Licensing Division Salesforce System API
+version: 1.0.4
+mediaType: 
+  - application/json
+protocols: [HTTPS]
+baseUri: https://host:port/nmrld-salesforce-sapi/v1
+
+uses:
+  common-fragments: /exchange_modules/5854e6ad-4c66-47c0-921e-72092756f614/commonapifragment/1.0.3/commonfragments.raml
+
+securedBy:
+  # - common-fragments.basic-authentication
+  - common-fragments.client-enforcement
+
+traits:
+  get-contact: !include traits/get-contact-request.raml
+  patch-contact: !include traits/patch-contact-request.raml
+  integration-status: !include traits/post-integration-status-resource.raml
+
+/ping:
+  type: common-fragments.ping-response
+
+/contacts:
+  is: [common-fragments.fault-400, common-fragments.fault-401, common-fragments.fault-404, common-fragments.fault-405, common-fragments.fault-406, common-fragments.fault-415, common-fragments.fault-500, common-fragments.fault-501]
+  get:
+    is: [get-contact]
+
+  /{contactId}:
+    description: Salesforce record Id for the Contact
+    is: [common-fragments.fault-400, common-fragments.fault-401, common-fragments.fault-404, common-fragments.fault-405, common-fragments.fault-406, common-fragments.fault-415, common-fragments.fault-500, common-fragments.fault-501]
+    get: 
+      description: Get a specific Salesforce Contact record given the Salesforce Record Id
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include examples/salesforce-get-contact-response.raml
+    patch:
+      is: [patch-contact]
+            
+/integrations:
+  /status:
+    is: [common-fragments.fault-400, common-fragments.fault-401, common-fragments.fault-404, common-fragments.fault-405, common-fragments.fault-406, common-fragments.fault-415, common-fragments.fault-500, common-fragments.fault-501]
+    post:
+      is: [integration-status]
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+

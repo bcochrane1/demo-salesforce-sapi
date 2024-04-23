@@ -1,0 +1,11 @@
+#%RAML 1.0 DataType
+
+properties:
+  ssn:
+    description: ssn of Contact to lookup
+    type: string
+    required: true
+    maxLength: 9
+    minLength: 9
+    example: "123456789"
+    pattern: ^\d{9}$

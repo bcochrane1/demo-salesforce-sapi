@@ -1,0 +1,36 @@
+#%RAML 1.0 Library
+usage: Provides common message structure for requests
+
+
+types:
+  ssn:
+    description: ssn of Contact to lookup
+    type: string
+    maxLength: 9
+    minLength: 9
+    example: "123456789"
+    pattern: ^\d{9}$
+  GetContactResponse:
+    description: Represents response when calling the GET:/contacts resource
+    properties:
+      Id:
+        description: Salesforce record Id
+        type: string
+        required: true
+      isCompliant:
+        description: Compliance status of the contact
+        type: boolean
+        required: true
+      ssnLastFour:
+        description: Last 4 digits of the SSN used to retrieve contact
+        type: string
+        maxLength: 4
+        minLength: 4
+        required: true
+  PatchContact:
+    properties:
+      isCompliant:
+        description: Boolean value if the contact is in compliance with Child Services
+        type: boolean
+        required: true
+        example: true

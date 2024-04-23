@@ -1,0 +1,39 @@
+{
+  "dependencies": [
+    {
+      "version": "1.0.1",
+      "assetId": "integration-status-object",
+      "groupId": "5854e6ad-4c66-47c0-921e-72092756f614",
+      "provided": false
+    },
+    {
+      "version": "1.0.0",
+      "assetId": "pingresponseexample",
+      "groupId": "5854e6ad-4c66-47c0-921e-72092756f614",
+      "provided": false
+    },
+    {
+      "version": "1.1.0",
+      "assetId": "common-raml-fragments",
+      "groupId": "5854e6ad-4c66-47c0-921e-72092756f614",
+      "provided": false
+    },
+    {
+      "version": "1.0.3",
+      "assetId": "commonapifragment",
+      "groupId": "5854e6ad-4c66-47c0-921e-72092756f614",
+      "provided": false
+    }
+  ],
+  "version": "1.0.5",
+  "originalFormatVersion": "1.0",
+  "apiVersion": "v1",
+  "descriptorVersion": "1.0.0",
+  "classifier": "raml",
+  "main": "nmrld-salesforce-sapi.raml",
+  "assetId": "nmrld-salesforce-sapi",
+  "groupId": "5854e6ad-4c66-47c0-921e-72092756f614",
+  "organizationId": "5854e6ad-4c66-47c0-921e-72092756f614",
+  "name": "nmrld-salesforce-sapi",
+  "tags": []
+}

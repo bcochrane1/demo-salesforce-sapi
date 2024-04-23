@@ -1,0 +1,13 @@
+#%RAML 1.0 Trait
+usage: Used by the PATCH:/contacts to define the request format
+
+uses:
+  dataLibrary: ../libraries/DataLibrary.raml
+
+body:
+  type: dataLibrary.PatchContact
+responses:
+  200:
+    body:
+      application/json:
+        example: !include ../examples/salesforce-patch-contact-response.raml

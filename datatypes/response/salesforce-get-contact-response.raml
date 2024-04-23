@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+properties:
+  Id:
+    description: Salesforce record Id
+    type: string
+    required: true
+  isCompliant:
+    description: Compliance status of the contact
+    type: boolean
+    required: true
+  ssnLastFour:
+    description: Last 4 digits of the SSN used to retrieve contact
+    type: string
+    maxLength: 4
+    minLength: 4
+    required: true
